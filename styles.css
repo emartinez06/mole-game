@@ -1,0 +1,38 @@
+body#game{
+    background: url('img/backGreen.jpg') repeat;
+}
+
+body#game ul#moles {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+body#game ul#moles li {
+    margin-bottom: 15px;
+}
+
+body#game ul#moles li a {
+    position: relative;
+    padding: 0;
+}
+
+body#game ul#moles li a:active {
+    box-shadow: 0 0 0 0;
+}
+
+body#game ul#moles li a img {
+    max-width: 100%;
+}
+
+body#game ul#moles li a img.mole {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+body#game ul#moles li a.hitted img.mole,
+body#game ul#moles li a.disabled img.mole {
+    display: block;
+}
