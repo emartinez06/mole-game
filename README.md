@@ -1,2 +1,2 @@
-# mole-game
+# Memory Mole
 Memory Mole Game
