@@ -1,5 +1,5 @@
 body#game{
-    background: url('img/backGreen.jpg') repeat;
+    background: url('assets/img/backGreen.jpg') repeat;
 }
 
 body#game ul#moles {
