@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles.css" >
 
 </head>
-<body id="game">
+<body id="game" onload="documentLoad()">
 <div class="container body-content">
 
     <ul id="moles" class="row">
@@ -103,7 +103,15 @@
             'Memory Mole',
             'Match the moles, avoid the bombs',
             'success'
-        )
-    })
+        );
+    });
+
+    function documentLoad(){
+        let element = document.querySelectorAll("img");
+
+        element.forEach(function(pageElement) {
+            pageElement.setAttribute('alt','Mole creature');
+        });
+    }
 </script>
 </html>

@@ -1,7 +1,7 @@
 var gameState = "";
 
 $(document).ready(function () {
-    
+
     gameState = "running";
 
     $("ul#moles").randomize("li");
@@ -32,23 +32,44 @@ function evaluateMole(mole, moleHit) {
         if (mole.data("group") == "bomb") {
             $("ul#moles li a").addClass("disabled");
             gameState = "over";
-            alert("You Lose :(")
-        }
-
-        else {
+            Swal.fire({
+                title: 'Sorry for your loss',
+                text: 'Wanna play again?',
+                type: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Let\'s Go'
+            }).then((result) => {
+                if (result.value) {
+                    document.location.reload();
+                }
+            });
+        } else {
             mole.addClass("disabled");
             moleHit.addClass("disabled");
             $("ul#moles li a.hitted").removeClass("hitted");
         }
-    }
-    else {
+    } else {
         $("ul#moles li a.hitted").removeClass("hitted");
     }
 
     if (gameState != "over") {
         if ($("ul#moles li a.disabled").length == $("ul#moles li a:not([data-group='bomb'])").length) {
             gameState = "over";
-            alert("You Win!");
+            Swal.fire({
+                title: 'Yay, you rock!!!',
+                text: 'Wanna play again?',
+                type: 'success',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Let\'s Go'
+            }).then((result) => {
+                if (result.value) {
+                    document.location.reload();
+                }
+            });
         }
     }
 }
